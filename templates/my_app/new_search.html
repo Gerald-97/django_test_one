@@ -3,44 +3,20 @@
     <h2 style="text-align:center">{{ search | title }}</h2>
 
     <div class="row">
-        <div class="col s4">
-            <div class="card">
-                <div class="card-image">
-                    <a href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwkfw-y7WZrpyBMYW3lk_znG9TeW-RR1T-Bw&usqp=CAU" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>RESULT</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">View listing: Price RESULT PRICE</a>
-                </div>
-            </div>
-        </div>
-        <div class="col s4">
-            <div class="card">
-                <div class="card-image">
-                    <a href="/"><img src="https://mumbrella.com.au/wp-content/uploads/2020/05/Stuff-logo-Nine.png" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>RESULT</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">View listing: Price RESULT PRICE</a>
+        {% for post in final_posting %}
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="/"><img src="{{ post.2 }}" alt=""></a>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ post.0 | title}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://www.jumia.com.ng/catalog/{{post.3}}">View listing: Price {{ post.1 }}</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col s4">
-            <div class="card">
-                <div class="card-image">
-                    <a href="/"><img src="https://mumbrella.com.au/wp-content/uploads/2020/05/Stuff-logo-Nine.png" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>RESULT</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">View listing: Price RESULT PRICE</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 {% endblock %}
